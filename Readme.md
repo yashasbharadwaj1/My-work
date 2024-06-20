@@ -18,7 +18,7 @@ Create the metrics according to the metrics list. Develop a dashboard based on t
 
 ![Metrics List](https://github.com/yashasbharadwaj1/supply-chain-analysis/assets/71028991/dad9dd73-2f74-4f21-8dbc-b5e73a145351)
 
-## Data Model
+## Data Model - Star Schema
 
 ![Data Model](https://github.com/yashasbharadwaj1/supply-chain-analysis/assets/71028991/58ed1e3e-f5e0-4eab-8626-90c6e6ad4ba4)
 
