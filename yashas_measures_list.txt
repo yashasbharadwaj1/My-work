@@ -1,0 +1,27 @@
+No of order lines shipped in full quantity = CALCULATE([Total order lines], fact_order_lines[In Full] = 1)
+
+Total Order Lines = COUNT(fact_order_lines[order_id])
+
+LIFR % = DIVIDE([No of order lines shipped in full quantity],[Total Order Lines],0)
+
+VORF % = [Total Quantity Shipped]/[Total Quantity Ordered] 
+
+Total Quantity Shipped = SUM(fact_order_lines[delivery_qty]) 
+
+Total Quantity Ordered = SUM(fact_order_lines[order_qty]) 
+
+
+Total Orders = DISTINCTCOUNT(fact_orders_aggregate[order_id]) 
+
+OT % = DIVIDE([No of Orders Delivered on time],[Total Orders]) 
+
+No of Orders Delivered on time = CALCULATE([Total Orders],fact_orders_aggregate[on_time]=1) 
+
+No of Orders Delivered in Full Quantity = CALCULATE([Total Orders],fact_orders_aggregate[in_full]=1)
+
+IF % = DIVIDE([No of Orders Delivered in Full Quantity ],[Total Orders])
+
+Number of orders delivered both IN Full & On Time  = CALCULATE([Total Orders], fact_orders_aggregate[in_full]=1,fact_orders_aggregate[on_time]=1)
+
+OTIF % = DIVIDE([Number of orders delivered both IN Full & On Time],[Total Orders],0) 
+
